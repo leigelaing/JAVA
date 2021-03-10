@@ -1,30 +1,27 @@
-package com.hp.demo;
-
-import java.util.Scanner;
-
+package com.bdqn;
+/**
+ * 冒泡排序
+ */
 public class Test1 {
 	public static void main(String[] args) {
-		Scanner input = new Scanner(System.in);
-		
-		System.out.println("亲！请输入您的年龄");
-		
-		int age = input.nextInt();
-		/* if(条件表达式) { 代码块...... }
-		 * 条件表达式结果为true 执行代码块
-		 * 条件表达式结果为false 不执行代码块
-		 */
-		if(age<=35){
-			System.out.println("请报名");
+		int [] a = {12,3,15,6,2};
+		// 定义一个变量：交换数据
+		 int temp;
+		// 外层循环控制的是：轮数
+		for(int i = 0;i<a.length-1;i++){
+			// 内层循环控制的是次数
+			for(int j = 0;j<a.length-1-i;j++){
+				// 如果前一个数字大于后面的，则交换位置
+				if(a[j]>a[j+1]){
+					temp = a[j];
+					a[j] = a[j+1];
+					a[j+1] = temp;
+				}
+			}
 		}
-		if(age>70){
-			System.out.println("欧巴！你还是再考虑一下吧！");
+		for(int i = 0;i<a.length;i++){
+			System.out.print(a[i] + "\t");
 		}
-		
-		System.out.println("End!");
-		
-		
-		
-		
-		
 	}
+
 }
