@@ -1,0 +1,10 @@
+package com.hp.bean;
+
+public class Library {
+	//  Èº‹√˚≥∆
+	public String shuJiaName;
+	
+	//  Èº‹
+	public Book[][] books = new Book[3][5];
+	
+}
