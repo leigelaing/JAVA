@@ -1,25 +1,42 @@
 package com.hp.demo;
 
 public class Demo5 {
-	 public static void main(String[] args) {
-		double i = 5.0+5.0*9.2+4.0+'a';
+	public static void main(String[] args) {
+		// 字符串和常见类型的转换
+		String str = "23";
+		int a = Integer.parseInt(str);
 		
-		int  a = 10;
-		double d = 23.33;
+		str = ""+a;
+		System.out.println(str);
 		
-		// 自动类型转换
-		/*d = a;
-		System.out.println(d);*/
+		String str2 = String.valueOf(11);
+		
+		System.out.println(str2);
+		
+		String str1 = "我";
+		String str3 = "是";
+		String str4 = "卧龙岗";
+		String str5 = "上";
+		String str6 = "闲散的人";
+		str1 = str1+str3+str4+str5+str6;
+		System.out.println(str1);
 		
 		
-		// 强制类型转换
-		a = (int)d;
-		System.out.println(a);
+		StringBuffer buffer = new StringBuffer("我");
+		buffer.append("是");
+		buffer.append("卧龙岗");
+		buffer.append("上");
+		buffer.append("闲散的人");
+		char c = buffer.charAt(0);
+		System.out.println(c);
+		String sb = buffer.toString();
+		System.out.println(sb);
 		
-		int s = 128;
-		byte b = 12;
-		b = (byte)s;
-		System.out.println(b);
+		
+		StringBuilder sb1 = new StringBuilder();
+		sb1.append("a");
+		
+		
 		
 		
 		

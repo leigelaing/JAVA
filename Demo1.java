@@ -1,29 +1,16 @@
 package com.hp.demo;
 
+import com.hp.bean.Student;
+
 public class Demo1 {
 	public static void main(String[] args) {
-		// 使用直接量
-		System.out.println("金莲");
+		Student s1 = new Student("a");
+		Student s2 = new Student("b");
+		/*s1=s2=null;
+		System.gc();
+		*/
 		
-		
-		String  name = "金莲";
-		
-		System.out.println(name);
-		System.out.println(name);
-		System.out.println(name);
-		System.out.println("金莲离开我们了.......");
-		
-		name ="西门";
-		
-		System.out.println(name);
-		
-		
-		
-		
-		
-		
+		Class c = s1.getClass();
+		System.out.println(c);
 	}
-
-
-	
 }

@@ -1,23 +1,19 @@
 package com.hp.demo;
 
+import com.hp.bean.Week;
+
 public class Demo3 {
 	public static void main(String[] args) {
-		// 变量
-		String name ;
 		
-		name = "金莲";
-		System.out.println(name);
 		
-		name = "李逵";
-		System.out.println(name);
-		
-		// 常量
-		final double d = 3.1415926;
-		
-		int i = 2;
+		switch (Week.星期一) {
+		case 星期一:
+			
+			break;
 
-		
-		double result = d*2*2;
+		default:
+			break;
+		}
 		
 		
 		
