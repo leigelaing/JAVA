@@ -1,22 +1,20 @@
-package com.hp.demo;
+package com.hp.test;
+
+import com.hp.bean.Aminal;
+import com.hp.bean.Cat;
+import com.hp.bean.Dog;
 
 public class Test5 {
 	public static void main(String[] args) {
-		int i = 1;
-		boolean b = true;
+		// Dog() 构造方法	
+		Dog dog = new Dog();
+		dog.eat();
+		Cat cat = new Cat();
+		cat.eat();
 		
-		/*while(i<=100){
-			
-			System.out.println("helloWorld");
-			i++;
-		}
-
-		System.out.println("End!");*/
 		
-		/*String str1 = "李逵";
-		String str2 = "李逵";
 		
-		System.out.println(str1.equals("金莲"));
-		*/
+		Aminal a = new Aminal();
+		
 	}
 }
