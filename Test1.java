@@ -1,27 +1,27 @@
-package com.hp.test;
+package com.hp.demo;
 
-import com.hp.bean.Students;
+import java.util.Scanner;
 
 public class Test1 {
 	public static void main(String[] args) {
-		Students stu1;
-		stu1 = new Students();
+		Scanner input = new Scanner(System.in);
 		
-		stu1.name="金莲";
-		stu1.age=18;
-		stu1.sex='女';
+		System.out.println("亲！请输入您的年龄");
 		
+		int age = input.nextInt();
+		/* if(条件表达式) { 代码块...... }
+		 * 条件表达式结果为true 执行代码块
+		 * 条件表达式结果为false 不执行代码块
+		 */
+		if(age<=35){
+			System.out.println("请报名");
+		}
+		if(age>70){
+			System.out.println("欧巴！你还是再考虑一下吧！");
+		}
 		
-		// 实例化
-		Students stu2 = new Students();
-		stu2.name="西施";
-		stu2.age=19;
-		stu2.sex='女';		
+		System.out.println("End!");
 		
-		
-		System.out.println(stu2.age);
-		
-		stu1.showMe();
 		
 		
 		
