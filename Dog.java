@@ -1,54 +1,16 @@
-package com.hp.bean;
+package com.legelaing;
 
-public class Dog  extends Aminal{
+public class Dog {
 	
-	private   String name;
-	private int age;
-	char sex;
-	
-	public void eat(){
-		System.out.println("啃骨头");
+	//没有static的成员变量，要用对象调用
+	//成员变量，可以不指定初始值
+	//系统会为之分配默认的初始值，初始值规则与数组完全一样。
+	String  name;
+	int age;
+	byte huhuhu;
+	public void run() 
+	{
+		System.out.print("使劲跑");
 	}
 
-	public Dog() {
-		super();
-		
-		// TODO Auto-generated constructor stub
-	}
-
-
-	public void tian(){
-		String name = super.getName();
-		System.out.println("舔");
-	}
-
-
-	public String getName() {
-		return name;
-	}
-
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-
-	public int getAge() {
-		return age;
-	}
-
-
-	public void setAge(int age) {
-		this.age = age;
-	}
-
-
-	public char getSex() {
-		return sex;
-	}
-
-
-	public void setSex(char a) {
-		sex = a;
-	}
 }
