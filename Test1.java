@@ -1,30 +1,25 @@
-package com.hp.demo;
-
-import java.util.Scanner;
+package com.bdqn;
 
 public class Test1 {
-	public static void main(String[] args) {
-		Scanner input = new Scanner(System.in);
+	public  static  void  main(String[]args)
+	{
+		//接口访问类变量
+		System.out.print(Ebtable.MAX_PRESER);
+	    //接口调用类方法
+		Ebtable.test5();
 		
-		System.out.println("亲！请输入您的年龄");
-		
-		int age = input.nextInt();
-		/* if(条件表达式) { 代码块...... }
-		 * 条件表达式结果为true 执行代码块
-		 * 条件表达式结果为false 不执行代码块
-		 */
-		if(age<=35){
-			System.out.println("请报名");
-		}
-		if(age>70){
-			System.out.println("欧巴！你还是再考虑一下吧！");
-		}
-		
-		System.out.println("End!");
-		
-		
-		
-		
-		
+		//接口不能创建对象
+		Ebtable  e1 = new  Ebtable();
 	}
+	
+	
+	
+	
+	
+	/*
+	{
+		MyThread mt = new MyThread();//实例化线程对象
+		mt.start();//启动线程
+	}
+*/
 }
