@@ -1,44 +1,28 @@
 package com.hp.demo;
 
+import java.util.Scanner;
+
 public class Demo5 {
 	public static void main(String[] args) {
-		// 字符串和常见类型的转换
-		String str = "23";
-		int a = Integer.parseInt(str);
+		// 获取键盘输入对象
+		Scanner input = new Scanner(System.in);
 		
-		str = ""+a;
-		System.out.println(str);
+		System.out.println("请输入字符串");
+		// 获取字符串的输入
+		String name = input.next();
+		System.out.println(name);
+		System.out.println("请输入年龄");
+		// 获取整数的int的输入
+		int age = input.nextInt();
+		System.out.println(age);
 		
-		String str2 = String.valueOf(11);
-		
-		System.out.println(str2);
-		
-		String str1 = "我";
-		String str3 = "是";
-		String str4 = "卧龙岗";
-		String str5 = "上";
-		String str6 = "闲散的人";
-		str1 = str1+str3+str4+str5+str6;
-		System.out.println(str1);
+		if(name.equals("金莲")){
+			System.out.println("快进来！！！");
+			
+		}
 		
 		
-		StringBuffer buffer = new StringBuffer("我");
-		buffer.append("是");
-		buffer.append("卧龙岗");
-		buffer.append("上");
-		buffer.append("闲散的人");
-		char c = buffer.charAt(0);
-		System.out.println(c);
-		String sb = buffer.toString();
-		System.out.println(sb);
-		
-		
-		StringBuilder sb1 = new StringBuilder();
-		sb1.append("a");
-		
-		
-		
-		
+		System.out.println("来根烟");
 		
 		
 		

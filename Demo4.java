@@ -1,32 +1,49 @@
 package com.hp.demo;
 
+import java.util.Scanner;
+
 public class Demo4 {
 	public static void main(String[] args) {
+		// 单分支
+		int a = 10 ; 
+		int b = 20;
 		
-		Integer i = new Integer(10);
-		System.out.println(i);
-		i = 11;// 自动类型转换   装箱
-		Integer v = Integer.valueOf("123");// 手动方法转换
-		System.out.println(v);
+		boolean result  = a<b;
+		
+		// 如果result成立，输出正确，如果不成立，输出不正确
+		// if(条件表达式){要执行的代码}      条件表达式要求为true
+		if(result){
+			System.out.println("成立");
+		}
+		
+		System.out.println("END");
+		
+		Scanner input = new Scanner(System.in);
+		
+		int score = input.nextInt();
+		boolean bl = score>=60;
+		if(bl){
+			
+			
+			System.out.println("看成绩");
+		}else{
+			System.out.println("嗓子哑了");
+		}
 		
 		
-		System.out.println(i);
 		
-		Byte b = new Byte((byte) 12);
 		
-		Integer i1 = new Integer("123");
-		int i2 = i1.intValue(); //  手动拆箱
-		int i3 = i1; // 自动拆箱
-		
-		System.out.println(i1);
+		System.out.println("参加家长会");
 		
 		
 		
-		Boolean bl = new  Boolean("true");
-		System.out.println(bl);
 		
 		
-		int i4 = Integer.parseInt("123");
+		
+		
+		
+		
+		
 		
 		
 		

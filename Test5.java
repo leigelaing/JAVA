@@ -1,20 +1,22 @@
-package com.hp.test;
-
-import com.hp.bean.Aminal;
-import com.hp.bean.Cat;
-import com.hp.bean.Dog;
+package com.hp.demo;
 
 public class Test5 {
 	public static void main(String[] args) {
-		// Dog() 构造方法	
-		Dog dog = new Dog();
-		dog.eat();
-		Cat cat = new Cat();
-		cat.eat();
 		
+		for(int i=0 ; i<100 ; i++){
+			
+			if(i%4==0){
+				
+				continue;
+			}
+			
+			System.out.println(i);
+			
+			
+		}
 		
-		
-		Aminal a = new Aminal();
+		// 1+2+3+4+5+6......+100=5050
+		// 输入5个数字，输出其中的最大值和最小值
 		
 	}
 }

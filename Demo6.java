@@ -1,35 +1,35 @@
 package com.hp.demo;
 
+import java.util.Scanner;
+
 public class Demo6 {
 	public static void main(String[] args) {
-		/*  运算符
-		 *  1. 算数运算符：+ 、 - 、 * 、 / 、% 、 ++ 、--
+		// 双分支
+		/* 语法：
+		 * if(条件表达式){
+		 * 		代码块1.....
+		 * }else{
+		 * 		代码块2.....
+		 * }
 		 * 
 		 */
-		int a = 10 ;
-		int b = 3;
-		/*int c = a%b;
+		Scanner input = new Scanner(System.in);
+		System.out.println("请输入成绩：");
+		int score = input.nextInt();
 		
-		System.out.println(0%0.0);
-		System.out.println(c);
-		*/
-		//++ 自增运算符  
-		//++在后，先用后加
-		/*System.out.println(a++);   // 先输出a， 再执行 a = a+1
+		
+		if(score>=60){
+			
+			System.out.println("放鞭炮庆祝");
+		}else{
+			System.out.println("面壁思过.....");
+		}
+		
+		System.out.println("继续上学");
 	
 		
-		System.out.println(a);*/
-		//++在前，先加后用
-		System.out.println(++a); // 先执行a=a+1 ， 再输出a
-		System.out.println(a);
+		// 工作日或休息日，工作日是否下雨，下雨写代码， 晴天出去跑业务，休息日如果32°以上游泳看美女，32°一下爬山
 		
-	
-		System.out.println(b+++2);
-		System.out.println(b);
 		
-	
-		System.out.println(b+++2);
-		System.out.println(b);
-		
-	}	
+	}
 }

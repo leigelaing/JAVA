@@ -1,18 +1,21 @@
 package com.hp.demo;
 
-import java.util.Scanner;
-
 public class Test6 {
 	public static void main(String[] args) {
-		Scanner input = new Scanner(System.in);
-		String name;
-		do {
-			System.out.println("请输入用户名:");
-			 name = input.next();
+		//1~100累加
+		
+		int total = 0;
+		
+		for (int i = 1; i <=100; i++) {
+			System.out.print(i);
+			if(i<100){
+				System.out.print("+");
+				
+			}
 			
-		} while (!(name.equals("admin")));
-		
-		
+			total = total+i;
+		}
+		System.out.println("="+total);
 		
 		
 	}
