@@ -1,18 +1,22 @@
-package com.hp.bean;
+package com.bdqn;
+//瀵逛簬鍩烘湰鏁版嵁绫诲瀷褰撲腑鐨刡oolean绫诲瀷锛実etter鏂规硶涓�瀹氳鍐欐垚isXxx鐨勫舰寮忥紝鑰宻etter瑙勫垯涓嶅彉
+
 
 public class Students {
-	/* 属性（成员变量）
-	 * 
-	 */
-	public String name;
-	public int age;
-	public char sex;
-	
-	// 方法（成员方法）
-	public void showMe(){
-		System.out.println("我叫"+name);
-		System.out.println("今年"+age+"岁");
-		System.out.println("性别你自己看");
-	}
-	
+    private String name;//濮撳悕
+    private boolean male;//鎬у埆
+    public void setMale(boolean b){
+        male = b;
+    }
+    public boolean isMale(){
+        return male;
+    }
+    public void setName(String name){
+        this.name = name;
+    }
+    public String getName(){
+        return name;
+    }
+
+
 }

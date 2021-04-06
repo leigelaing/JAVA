@@ -1,40 +1,32 @@
-package com.hp.demo;
-
-import java.util.Scanner;
+package com.hehe;
 
 public class Test1 {
-	public static void main(String[] args) {
-		
-		/* Ñ­»· £º ÖØ¸´µÄÖ´ĞĞÒ»¶ÎÂß¼­
-		 * whileÑ­»·     ²»¶¨³¤Ñ­»·       ÏÈÅĞ¶ÏºóÖ´ĞĞ
-		 * Óï·¨:
-		 * while(Ìõ¼ş±í´ïÊ½){
-		 * 			ÖØ¸´Ö´ĞĞµÄ´úÂë
-		 * }
-		 */
-		Scanner input = new Scanner(System.in);
-		int i = 101;
-		while(i<=100){
-			
-			System.out.println("ÌìÍõ¸ÇµØ»¢");
-			i= input.nextInt();
-		}
-		
-		
-		/* do-whileÑ­»·  ²»¶¨³¤Ñ­»·    ÏÈÖ´ĞĞºóÅĞ¶Ï
-		 * Óï·¨:
-		 * do{
-		 * 			ÖØ¸´Ö´ĞĞµÄ´úÂë
-		 * }while(Ìõ¼ş±í´ïÊ½)£»
-		 */
-		String name = null; 
-		do{
-			System.out.println("ÌìÍõ¸ÇµØ»¢");
-			name = input.next();
-			
-		}while(name.equals("Î÷°²"));
-			
-		// Ğ´ÒøĞĞµÇÂ¼µÄÂß¼­
-		
-	}
+    public static void main(String[] args) {
+        Student stu1 = new Student();
+        stu1.setName("é—¨ä¸€åš");
+        stu1.setAge(1200);
+        System.out.println("å§“å"+stu1.getName()+",å¹´é¾„"+stu1.getAge());
+        System.out.println("=============================");
+        Student stu2 = new Student("é›·è‘›äº®",15);
+        System.out.println("å§“å"+stu2.getName()+",å¹´é¾„"+stu2.getAge());
+        System.out.println("==============================");
+        stu2.setAge(50);
+        System.out.println("å§“å"+stu2.getName()+",å¹´é¾„"+stu2.getAge());
+    }
+
+
+
 }
+
+    /*
+    public static void main(String[] args) {
+
+        This one = new This();
+        //è®¾ç½®è‡ªå·±çš„åå­—
+        one.name = "é›·è‘›äº®";
+        one.sayHello("é—¨ä¸€åš");
+        System.out.println("=========================");
+        System.out.println(one);//åœ°å€å€¼
+    }
+}
+*/

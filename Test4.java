@@ -1,70 +1,33 @@
-package com.hp.demo;
-
+package com.hehe;
 import java.util.Scanner;
-
+import java.util.SortedMap;
+//åŒ¿åå¯¹è±¡ä½œä¸ºå‚æ•°å’Œè¿”å›å€¼
 public class Test4 {
-	 public static void main(String[] args) {
-		/* ¶¨³¤Ñ­»·
-		 * forÑ­»·
-		 * Óï·¨£º
-		 * for(³õÊ¼Öµ ; Ñ­»·Ìõ¼ş   ; µü´úÓï¾ä ){
-		 * 		´úÂëÌå
-		 * }
-		 * µü´ú£ºÖØ¸´·´À¡¹ı³ÌµÄ»î¶¯£¬ÆäÄ¿µÄÍ¨³£ÊÇÎªÁË±Æ½ü½á¹û»òËùĞèÄ¿±ê£¬Ã¿Ò»´Î¶Ô¹ı³ÌµÄÖØ¸´
-		 * 		¶¼³ÆÎªÒ»´Îµü´ú£»Ã¿Ò»´Îµü´úµÄ½á¹û¶¼»á×÷ÎªÏÂÒ»´ÎµÄ³õÊ¼Öµ
-		 * 
-		 * Ê×ÏÈÖ´ĞĞ±í´ïÊ½1£¬½øĞĞ±äÁ¿µÄ³õÊ¼»¯²Ù×÷; È»ºóÖ´ĞĞ±í´ïÊ½2£¬¶ÔÑ­»·Ìõ¼ş½øĞĞÅĞ¶Ï£¬½á¹ûÎ»true£¬Ö´ĞĞ´úÂëÌåÖĞµÄ´úÂë£¬
-		 * Ñ­»·Ìå´úÂëÖ´ĞĞÍê³Éºó£¬Ö´ĞĞ±í´ïÊ½3£¬¸Ä±ä±äÁ¿iµÄÖµ£¬ÔÙ´ÎÖ´ĞĞ±í´ïÊ½2£¬ÎªÕæ£¬ÖØ¸´Ö´ĞĞ£¬ Îª¼Ù£¬Ìø³öÑ­»·
-		 * 
-		 * ÊôÓÚÏÈÅĞ¶ÏºóÖ´ĞĞµÄÑ­»·
-		 */
-		 
-/*		 for(int i=0 ; i<100 ; i++){
-			 
-			 System.out.println("ÌìÍõ¸ÇµØ»¢£¡"+(i+1));
-			 
-		 }*/
-		 
-		 // Êä³ö100ÒÔÄÚµÄÊı×Ö
-/*		 for(int i=0 ; i<=100 ; i++){
-			 
-			 System.out.println(i);
-			 
-			 
-		 }*/
-		 
-		 
-		 
-		 // µ¹ĞğÊä³ö100ÒÔÄÚµÄÊı×Ö
-		 for (int i = 100; i > 0; i--) {
-			System.out.println(i);
-		}
-		 
-		 
-		 // ÊäÈë5¸ö³É¼¨£¬¼ÆËãÆ½¾ù·Ö
-		 Scanner input = new Scanner(System.in);
-		 int count = 0;
-		 for (int i = 0; i <6; i++) {
-			
-			 System.out.println("ÇëÊäÈë³É¼¨");
-			 int score = input.nextInt();
-			 if(score<1||score>100){
-				 System.out.println("¸çÃÇ£¡Äã¸ã´íÁË£¡ÇëÖØĞÂÊäÈë");
-				 i--;
-				 // ½áÊø±¾´ÎÑ­»·£¬½øÈëÏÂÒ»´ÎÑ­»·
-				 continue;
-				 
-			 }
-				 count = count+score;
-			 
-			
-			 
-			 
-		}
-		 System.out.println(count/5);
-		 
-		 
-		 
-		 
-	}
+    public static void main(String[] args) {
+        //æ™®é€šä½¿ç”¨æ–¹æ³•
+        Scanner  sc = new Scanner(System.in);
+        int num = sc.nextInt();
+
+        //åŒ¿åå¯¹è±¡çš„æ–¹å¼
+        int num1 = new Scanner(System.in).nextInt();
+        System.out.println("è¾“å…¥çš„æ•°å­—ä¸º"+num1);
+
+        //ä½¿ç”¨ä¸€èˆ¬å†™å…¥ä¼ å…¥å‚æ•°
+        Scanner sc1 = new Scanner(System.in);
+        methodparam(sc1);
+
+        //ä½¿ç”¨åŒ¿åå¯¹è±¡è¿›è¡Œä¼ å‚
+        methodparam(new Scanner(System.in));
+
+        Scanner cv = method();
+        int num5 = cv.nextByte();
+        System.out.println("è¾“å…¥çš„æ˜¯"+num5);
+    }
+    public  static void methodparam(Scanner sc){
+        int num = sc.nextInt();
+        System.out.println("è¾“å…¥çš„æ˜¯"+num);
+    }
+    public static Scanner method(){
+        return new Scanner(System.in);
+    }
 }

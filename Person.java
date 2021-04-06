@@ -1,17 +1,19 @@
-package oop;
+package com.hehe;
 
 public class Person {
-	String name;
-	String sex;
-	int age;
-	//¹¹Ôì·½·¨£º
-	public Person(String name,String sex,int age){
-		this.name = name;
-		this.sex = sex;
-		this.age  = age;
-	} 
-   //live()·½·¨
-	public void live(){
-		System.out.print("¹¤×÷");
-	}
+    String name;
+    int age;
+
+    public Person() {
+    }
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    public void showName(){
+        System.out.println("æˆ‘çš„å«"+name);
+    }
+
+
 }
