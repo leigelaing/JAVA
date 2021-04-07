@@ -1,35 +1,63 @@
-package com.hehe;
+package com.haha;
 /*
-   Scanner类的功能：可以实现键盘输入数据，到程序当中去
-   引用类型的一般使用步骤：
-   1.导包
-   import 包路径.类名称
-   如果需要使用的目标类，和当前类位于同一一个包下，则可以省略包语句不写
-   只有java.long包下的内容不需要导包，其他的包都需要import语句。
-   2.创建
-   类名称 对象名 = new 类名称();
-   3.使用
-   对象名.成员方法()
+    匿名类实现线程的创建
 
-   获取键盘输入的一个int数字，int num = sc.nextInt();
-   获取键盘输入的一个字符串，String str = sc.next();
+     匿名：就是没有名字
+     内部类：写在其他类内部的类
+     匿名内部类的作用：简化代码
+     把子类继承父类，重写父类的方法，创建子类对象合在在一步完成。
+     匿名内部类的最终产物：子类/实现类对象，而这个类没有名字。
+    格式：
+    new 父类/接口(){
+      重写父类/接口中的方法
+    }
  */
 
-import java.util.Scanner;
-
 public class Test2 {
-
     public static void main(String[] args) {
-        //2.创建
-        //备注：System.in 代表从键盘进行输入
-        Scanner sca = new Scanner(System.in);
+        //以前
+        //线程的父类Thread
+        //new MyThread().Start();
 
-        //3.获取键盘输入的int数字
-        int num = sca.nextInt();
-        System.out.println("输入的int数字是" + num);
+        //匿名内部类创建线程
+        new Thread() {
+            //重写run方法设置线程任务
+            @Override
+            public void run() {
+                for (int i = 0; i < 20; i++) {
+                    System.out.println(Thread.currentThread().getName()+"->"+"大哥");
+                }
 
-        //4.获取键盘输入的字符串
-        String str = sca.next();
-        System.out.println("输入的字符串是"+ str);
+            }
+        }.start();
+
+       //以前
+       //线程的接口Runable
+       //Runable ru = new Runable1();     多态
+       //现在
+        Runnable t = new Runnable(){
+           //重写run方法设置线程任务
+
+           @Override
+           public void run() {
+               for (int i = 0; i < 10; i++) {
+                   System.out.println(Thread.currentThread().getName()+"->"+"小弟");
+               }
+           }
+       };
+       new Thread(t).start();
+
+       //简化接口的方式创建对象
+
+        new Thread(new Runnable(){
+            //重写run方法设置线程任务
+
+            @Override
+            public void run() {
+                for (int i = 0; i < 10; i++) {
+                    System.out.println(Thread.currentThread().getName()+"->"+"雷公");
+                }
+            }
+        }).start();
     }
 }
