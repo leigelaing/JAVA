@@ -1,37 +1,31 @@
-package com.hehe;
+package com.bdqn;
+  //定义一个类，用来模拟“学生”事物，其中就有两部分组成
+  //属性（是什么）
+ // 姓名   年龄
+  //行为(能干什么)
+  // 吃饭   睡觉   学习
 /*
-一个标准类通常要拥有四个组成部分：
-   1.所有成员变量都是用private关键字修饰
-   2.为每个成员变量编写一对getter/setter方法
-   3.编写一个无参的构造方法
-   4.编写一个全参的构造方法
+   对应到java类中：
+   成员变量（属性）：
+   String name;//姓名
+   int age;//年龄
+   成员方法（行为）：
+   public void eat();//吃饭
+   public void sleep();//睡觉
+   public void  study();//学习
  */
 public class Student {
-    private String name;//姓名
-    private int age;//年龄
-
-    public Student() {
-
+    //成员变量
+    String name;
+    int  age;
+    //成员方法
+    public void eat(){
+        System.out.println("吃饭方法");
+      }
+    public void sleep(){
+        System.out.println("睡觉方法");
     }
-
-    public Student(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
+    public void  study(){
+        System.out.println("学习方法");
     }
 }

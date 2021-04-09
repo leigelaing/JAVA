@@ -1,46 +1,77 @@
-package com.hehe;
+package com.bdqn;
 
-import java.util.Scanner;
+import java.util.Arrays;
 
-//创建对象的标准格式是：
-//类名称  对象名 = new 类名称();
-
-//匿名对象就是只有右边的对象，没有左边的名字和赋值运算符
-//new.类名称();
-//注意事项：匿名对象只能使用唯一的一次，下次再使用必须创建新的对象。
-//使用建议：如果确定有一个对象只需要使用唯一一次，建议创建匿名对象。
-
-
+//面向过程：当需要实现一个功能的时候，每一个具体步骤都要亲历亲为，详细处理每一个细节
+//面向对象：当需要实现一个功能的时候，不关心具体的步骤，而是找一个已经具备该功能的人，来帮我做
+//
+//
 public class Test3 {
+
+
+
+
+
+    /*
     public static void main(String[] args) {
-        //左边的one就是对象名
-        Person one = new Person();
-        one.name = "王八蛋";
-        one.showName();
-        System.out.println("======================");
-        //匿名对象
-        new Person().name = "日他妈的";
-        new Person().showName();//结果为：null值
+        int[] arr = {1,2,3,4,5};
+        //要求打印格式为[1,2,3,4,5]
+        //使用面向过程
+        System.out.print("[");
+        for (int i = 0; i < arr.length; i++) {
+            if (i == arr.length - 1) {
+                System.out.print(arr[i] + "]");
+            } else {
+                System.out.print(arr[i] + ",");
+            }
+
+        }
+            //面向对象
+            //找到JDK提供的Arrays类
+            //其中有一个toString方法，直接完成想要的结果
+            System.out.println(Arrays.toString(arr));
+
+
     }
+
+*/
+
 
 
 }
+
     /*
+    //一个方法可以有0,1多个参数，但是只能有0,1个返回值，不能有多个返回值。
+    //如果希望一个方法中产生多个返回值，怎么办？
+    //任何数据类型都能作为方法的参数类型，或者返回值类型
+    //数组作为方法的参数，传递进去的其实是数组的地址值。
+    //数组作为方法的返回值，返回的其实是数组的地址值。
+
     public static void main(String[] args) {
-        Scanner  input = new Scanner(System.in);
-        System.out.println("输入第一个数字");
-        int a = input.nextInt();
-        System.out.println("输入第二个数字");
-        int b = input.nextInt();
-        System.out.println("输入第三个数字");
-        int c = input.nextInt();
+      //数组定义的精简写法
 
-        int tmp = (a>b?a:b);
-        int mab = (tmp>c?tmp:c);
-        System.out.println(mab);
 
+       int[] result = calculate(10,20,30);
+        System.out.println("总和"+result[0]);
+        System.out.println("平均数"+result[1]);
+
+        System.out.println("main方法中接受到的数组返回值是：");
+        System.out.println(result);
+    }
+    public static int[] calculate(int a,int b,int c){
+        int sum = a + b + c;//总和
+        int avg = sum / 3;//平均数
+        //两个结果都希望进行返回
+       //第一种
+        int[] arr = new int[2];
+        arr[0] = sum;
+        arr[1] = avg;
+        //第二种
+        int[] arr1 ={sum,avg};
+        System.out.println("calculate内部数组是");
+        System.out.println(arr);
+        return arr;
 
     }
-
 }
 */

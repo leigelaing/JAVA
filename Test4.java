@@ -1,33 +1,45 @@
-package com.hehe;
-import java.util.Scanner;
-import java.util.SortedMap;
-//匿名对象作为参数和返回值
+package com.bdqn;
+/*
+通常情况下，一个类并不能直接使用，需要根据类创建对象才能使用
+1.导包：就是指出需要使用的类，在什么位置
+import 包名称.类名称;
+注意：对于和当前类属于同一个包的情况，可以省略包语句不写
+
+2.创建：格式：
+类名称  对象名 = new 类名称();
+Student stu = new Student();
+
+3.使用  ， 分为两种情况：
+使用成员变量：对象名.成员变量名
+使用成员方法：对象名。成员方法名(参数);
+（也就是 想用谁，就用对象名点谁）
+
+z注意事项：
+如果成员变量没有进行赋值，那么将会由默认值，规则和数组一样。
+成员方法是不需要static修饰符修饰的。
+ */
 public class Test4 {
     public static void main(String[] args) {
-        //普通使用方法
-        Scanner  sc = new Scanner(System.in);
-        int num = sc.nextInt();
+        //1.同一包下，导包省略
+        //2.创建对象
 
-        //匿名对象的方式
-        int num1 = new Scanner(System.in).nextInt();
-        System.out.println("输入的数字为"+num1);
+        Student stu = new Student();
+       //3.使用其中的成员变量和成员方法
+        System.out.println(stu.name);//null
+        System.out.println(stu.age);//0
+        System.out.println("========================");
 
-        //使用一般写入传入参数
-        Scanner sc1 = new Scanner(System.in);
-        methodparam(sc1);
+        //使用成员方法
+        stu.eat();
+        stu.sleep();
+        stu.study();
+        System.out.println("========================");
+        //改变对象当中的成员变量数值内容
+        //将右侧的字符串，赋值交给stu对象当中的name成员变量
+        stu.name = "雷葛亮";
+        stu.age = 18;
+        System.out.println(stu.name);
+        System.out.println(stu.age);
 
-        //使用匿名对象进行传参
-        methodparam(new Scanner(System.in));
-
-        Scanner cv = method();
-        int num5 = cv.nextByte();
-        System.out.println("输入的是"+num5);
-    }
-    public  static void methodparam(Scanner sc){
-        int num = sc.nextInt();
-        System.out.println("输入的是"+num);
-    }
-    public static Scanner method(){
-        return new Scanner(System.in);
     }
 }

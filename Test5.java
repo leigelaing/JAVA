@@ -1,82 +1,105 @@
-package com.hehe;
+package com.bdqn;
 
-import java.util.Random;
-import java.util.Scanner;
-//Random类用来生成随机数，使用起来就是三个步骤：
-//1.导包
-// import java.util.Random;
-//2.创建
-//Random r = new Random();  小括号留空即可
-//3.使用
-//获取随机数的int数字，（范围是int所有范围，有正负两种）；int num = r.nextInt();
-//获取随机数的int数字，(参数代表了范围，左闭右开区间)，：int num = r.nextInt(3);
-//实际上代表的含义是：[0,3) 也就是0-2
+/* 局部变量与成员变量的区别
+ 1.定义的位置不一样【重点】
+ 局部变量：在方法的内部
+ 成员变量：在方法的外部，直接写在类中
+ 2.作用范围不一样【重点】
+ 局部变量：只有在方法当中才可以使用，出了方法就不能再使用
+ 成员变量：整个类中都可以通用
+ 3.默认值不一样【重点】
+ 局部变量：没有默认值，如果想使用，必须手动进行赋值
+ 成员变量：如果没有赋值，会有默认值，规则和数组一样
+ 4.内存的位置不一样
+ 局部变量：位于栈内存
+ 成员变量：位于堆内存
+ 5.生命周期不一样
+ 局部变量：随着方法进栈而诞生，随着方法结束而消失
+ 成员变量:随着对象创建而诞生，随着对象被垃圾回收而消失
 
+  */
 
 public class Test5 {
-    //猜字游戏
-    public static void main(String[] args) {
-    Random  ra = new Random();
-    int a = ra.nextInt(100)+1;//生成1-100之间的数字
-    Scanner sa = new Scanner(System.in);
-    while(true){
-        System.out.println("请输入数字");
-        int b = sa.nextInt();
-        if (a > b) {
-            System.out.println("小了");
-        } else if (a < b) {
-            System.out.println("大了");
-        } else {
-            System.out.println("正确");
-            break;    //如果猜中，不再重复
-        }
+  String name;//成员变量
+    public void met (){
+        int num = 20;//局部变量
+        System.out.println(num);
+        System.out.println(name);//成员变量依旧可以用
     }
- }
+    public void met1 (){
+
+       // System.out.println(num);//局部变量无法使用
+        System.out.println(name);//成员变量依旧可以用
+    }
+    public void met1 (int parme){  //方法参数就是局部变量
+        //参数在调用方法的时候，必然会被赋初始值。
+        System.out.println(parme);
+        int age;//局部变量
+        System.out.println(name);//成员变量依旧可以用
+    }
 }
 
 
 
 
-    /*
-    //Random练习一 生成1-n之间的随机数
+/*
     public static void main(String[] args) {
-        int n = 5;
-        Random r = new Random();
-        for (int i = 0; i < 100; i++) {
-            //本来范围为[0,n),整体加1之后变为[1,n+1),也就是[1,n]
-            int num = r.nextInt(n);//生成数字为1-n
-            System.out.println(num);
-        }
+        Phone two = getPhone();
+        System.out.println(two.brand);
+        System.out.println(two.price);
+        System.out.println(two.color);
+
+    }
+    public static Phone getPhone(){
+        Phone one = new Phone();
+        one.brand = "VIVE";
+        one.price = 8566.0;
+        one.color = "屎一样的颜色";
+        return one;
+    }
+}
+*/
+    /*
+    public static void main(String[] args) {
+        Phone one = new Phone();
+        one.brand = "OPPOr";
+        one.price = 6665.0;
+        one.color = "黄色";
+        method(one);//传递进去的参数实际就是地址
+
+    }
+    public static void method(Phone param){
+        System.out.println(param.brand);
+        System.out.println(param.price);
+        System.out.println(param.color);
     }
 }
 */
 
 
-    /*
-   // Random生成指定范围的随机数
-   public static void main(String[] args) {
-       Random r = new Random();
-       for (int i = 0; i < 10; i++) {
-           int num = r.nextInt(10);//生成数字为0-9
-           System.out.println(num);
-       }
-   }
-
-}
-*/
-
-
-
-
-
 
 
     /*
     public static void main(String[] args) {
-        Random r = new Random();
+        //根据phone类，创建一个名为one的对象
+        Phone one = new Phone();
+        System.out.println(one.brand);
+        System.out.println(one.price);
+        System.out.println(one.color);
+        System.out.println("================");
 
-        int num = r.nextInt();
-        System.out.println("随机数是：" + num);
+        one.brand = "小米";
+        one.price = 8885.0;
+        one.color = "黑色";
+        System.out.println(one.brand);
+        System.out.println(one.price);
+        System.out.println(one.color);
+        System.out.println("================");
+
+        one.call("老刀把子");
+        one.sendMessage();
+
+
     }
 }
 */
