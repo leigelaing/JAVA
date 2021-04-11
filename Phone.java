@@ -1,16 +1,13 @@
-package com.bdqn;
-
+package com.sadff;
+//定义一个老款手机作为父类
 public class Phone {
-    //成员变量
-    String brand; //品牌
-    double price; //价格
-    String color; //颜色
-
-    //成员方法
-    public void call(String who){
-        System.out.println("给"+who+"打电话");
+    public void  Call(){
+        System.out.println("打电话");
     }
-    public void  sendMessage(){
-        System.out.println("群发短信");
+    public void send(){
+        System.out.println("发短信");
+    }
+    public void show(){
+        System.out.println("显示号码！");
     }
 }

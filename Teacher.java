@@ -1,46 +1,6 @@
-package com.leigeliang;
+package com.sadff;
+//å®šä¹‰çš„Eoployee çš„å­ç±»
+public class Teacher extends Eoployee {
+    //å­ç±»å½“ä¸­ä»€ä¹ˆéƒ½ä¸å†™é‚£ä¹Ÿç»§æ‰¿äº†çˆ¶ç±»çš„ä¸œè¥¿
 
-public class Teacher {
-	
-	public  static  void main(String[]args){
-		double d1 = 4.0/-0.0;
-		System.out.println(d1);//½á¹ûÎª¸ºÎŞÇî´ó
-	
-		double d2 = 4.0/0.0;
-		System.out.println(d2);//½á¹ûÎªÕıÎŞÇî´ó
-		
-		double d3 = 4e30/0.0;
-		System.out.println(d3);//d3Óëd1 ÏàµÈ£¬ËùÓĞÕıÎŞÇî´ó¶¼ÏàµÈ¡£
-	
-		double d4 = 0.0/0;
-		System.out.println(d4);//½á¹ûÎª·ÇÊı
-		
-		//×Ö·ûĞÍ
-		char c1 = 'a';
-		char c2 = 'ÎÒ';
-		
-		
-	}
-	
-	
-	
-	
-	/*
-	
-	
-	
-	//ÎÄµµ×¢ÊÍµÄ¸ñÊ½ÊÇ¹Ì¶¨µÄ
-	/**
-	 * 
-	 * @param a   //²ÎÊıËµÃ÷
-	 * @param b
-	 * @return   ·Å»ØµÄÎªaºÍbµÄºÍ
-	 
-	
-	public int add(int a,int b)
-	{
-		return a + b;
-		
-	}
-*/
 }

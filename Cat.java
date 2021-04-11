@@ -1,17 +1,9 @@
-package com.hp.bean;
+package com.ffff;
 
-public class Cat extends Aminal{
-	
-	
-
-	public void zhuoLaoshu(){
-		System.out.println("×½ÀÏÊó");
-		
-	}
-	//  ÖØĞ´
-	@Override
-	public void eat() {
-		System.out.println("Ã¨³ÔÓã");
-	}
+public class Cat extends Animal {
+    @Override
+    public  void eat(){
+        System.out.println("é—¨ä¸€åšåƒå±");
+    }
 
 }
