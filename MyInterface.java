@@ -1,7 +1,6 @@
-package com.demo3;
-
+package com.demo1;
+//接口
 public interface MyInterface {
-    public default void method(){
-        System.out.println("接口当中的默认方法");
-    }
+    void method1();//抽象方法
+    void method2();
 }
