@@ -1,37 +1,29 @@
-package com.bdqn;
-
+package com.demo5;
 /*
-  问题描述：定义的Person的年龄的时候，无法阻止不合理的数值被设置进来。
-  解决方案：用private关键字将需要保护的成员变量进行修饰
-  注意：一旦使用private进行修饰，那么本类当中任然可以随意访问。
-  但是，超出本类范围就不能再直接访问了
-
-  间接访问private修饰的成员变量，就是定义一对getter与setter方法
-
-  必须叫setXxx或者getXxx命名规则；
-  对于getter来说，不能有参数，返回值类型和成员变量对应。
-  对于setter来说，不能有返回值，参数类型和成员变量对应
-
-*/
-
+   对于成员变量来说，如果使用final关键字修饰，那么这个变量也照样是不可改变的
+   1.由于成员变量具有默认值，所以用了final之后必须手动赋值，不会再给默认值
+   2.对于final的成员变量，要么直接赋值，要么通过构造方法赋值。 //二者选其一
+    注意：使用构造方法赋值，就必须保证类中所有的构造方法都必须赋值。
+    3.必须保证类当中的所有重载的构造方法，都最终会对final的成员变量进行赋值。
+ */
 public class Person {
-    String name;
-    private int age;
-    public  void  show(){
-        System.out.println("我叫"+name+"年龄"+age);
-    }
-    //本方法专门用于向age设置数据
-    public void setAge(int num){
-        if(num<100 && num>=10){
-            age = num;
-        }
-        else{
-            System.out.println("数据不合理");
-        }
+    //final修饰成员变量一定手动赋初始值（直接赋值）
+    private final String name /*= "日你妈"*/;
 
+    public Person() {
+      name = "迪丽热巴";
     }
-    //本方法，专门私语获取age的数据
-    public int getAge(){
-       return age;
+
+    public Person(String name) {
+        this.name = name;
     }
+
+    public String getName() {
+        return name;
+    }
+    //已经被final修饰不能在给它赋值。
+
+   // public void setName(String name) {
+     //   this.name = name;
+    //}
 }

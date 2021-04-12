@@ -1,12 +1,12 @@
-package com.sadff;
-
-public class Zi extends Fu {
-    int numzi = 20;
-
-    int num = 200;
-    public void methodZi(){
-        //因为本类当有对应的num，所以使用的是本类当中的num。
-        // 如果本类当中没有num就使用父类当中的num。
-        System.out.println(num);
+package com.demo5;
+/*
+public class Zi extends Fu{
+    //父类的method()方法已经final修饰，子类不能被覆盖重写。
+    /*
+    @Override
+    public void method(){
+        System.out.println("子类方法的执行");
     }
+
 }
+*/
