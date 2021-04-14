@@ -1,116 +1,33 @@
-package com.bdqn;
-
-public class Test1 {
-
-    public static void main(String[] args) {
-
-
-
-    }
-    public static void Add(int a,double b){
-        double c = a+b;
-    }
-    public static void Add(double b,int a){
-        double c = a+b;
-    }
-
-
-
-
-
-
-
-
-
-
-
-
+package com.haha;
 /*
-    //求出1——100之间的累加和
-    public static void main(String[] args) {
-        int a = Add();
-        System.out.println(a);
-        Add1(100);
-    }
-    public static int Add(){
-        int sum = 0;
-        for (int i = 1; i <= 100; i++) {
-            sum += i;
-        }
-        return sum;
-    }
-    public  static  void Add1(int a){
-        int sum1 = 0;
-        for (int i = 0; i <= a; i++) {
-            sum1 += i;
-        }
-        System.out.println(sum1);
-    }
+//创建多线程的第二种方法，实现Runnable接口
+//java.lang.Runable
+//Runable接口应该由那些打算通过某一线程执行其实例的类来实现。
+//类必须定义一个称为run的无参数方法
+//java.lang.Thread的构造方法
+Thread（Runable  target）分配新的Thread对象。
+Thread（Runable  target，String name）分配新的Thread对象。
 
-
+实现步骤：
+ 1.创建一个Runable接口的实现类
+ 2.在实现类中重写Runable接口的run方法，设置线程任务
+ 3.创建一个Runable接口的实现类对象
+ 4.创建Thread类对象，构造方法中传递Runable接口的实现类对象。
+ 5.调用Thread类中的start方法，开启新的线程执行run方法。
 */
-
-
-
-
-
-    /*
-    //比较两个数字是否相同
+public class Test1 {
     public static void main(String[] args) {
-        same1(3,6);
+       // 3.创建一个Runable接口的实现类对象
+         Runable1 run1 = new Runable1();
 
-        int a1 = same2(3,6);
-        if(a1 == 1){
-            System.out.println("相同");
-        }
-        else{
-            System.out.println("不相同");
-        }
+       //4.创建Thread类对象，构造方法中传递Runable接口的实现类对象。
+         Thread t = new Thread(run1); //打印线程名称
 
+        Thread t1 = new Thread(new Runable2());//直接运行Runable中的run方法
+        t.start();
 
-    }
-    public  static void  same1(int a ,int b){
-        if(a == b){
-            System.out.println("相同");
-        }
-        else{
-            System.out.println("不相同");
+         for (int i = 0; i < 20; i++) {
+            System.out.println(Thread.currentThread().getName() +"->"+i);
         }
     }
-
-    public  static int  same2(int a ,int b){
-        if(a == b){
-            return 1;
-        }
-        else{
-            return 0;
-        }
-    }
-
-    */
-
-
-
-
-    /*
-    public static void main(String[] args) {
-        printMethod();
-       // int c = Add(2,5);
-        System.out.println(c);
-
-    }
-    public static void printMethod(){
-    for (int i = 0; i < 5; i++) {
-        for (int j = 0; j < 20; j++) {
-            System.out.print("*");
-        }
-        System.out.println();
-     }
-   }
-   //自己进行打印输出，没有返回值。
-    public static  void  Add(int a,int b){
-
-        System.out.println(a+b);
-   }
-*/
 }

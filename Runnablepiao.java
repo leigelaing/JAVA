@@ -1,85 +1,60 @@
-package com.gaga;
+package com.wanshang;
+
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 /*
 实现买票案例
-线程安全问题解决方案二：
-        同步方法  来解决线程安全问题
-    使用步骤：
-    1.把访问了共享数据的代码抽取出来，放到一个方法中
-    2.在方法上添加synchronized修饰符
-    格式
-    修饰符  synchronized  返回值类型 方法名（参数列表）{
-     可能出现线程安全问题的代码，（访问了共享数据的代码）
-    }
-    
-    定义一个同步方法
-    同步方法也会把方法内部的代码锁住
-    只让一个线程执行
-    同步方法的锁对象是谁？
-    就实现类对象new RUnnable()
+
+   解决线程安全问题的第三种方案：使用Lock锁
+   包路径：java.util.concurrent.locks.lock接口
+   lock实现提供了比使用synchronize方法和语句可获得的更广泛的锁定操作
+   lock接口中的方法：
+     void lock();
+     获取锁
+     void unlock();
+     java.util.concurrent.locks.Reentrantlock  implements lock接口
+
+     释放锁
+     使用步骤：
+     1.在成员位置创建一个Reentrantlock对象
+     2.在可能出现安全问题的代码前调用lock接口中的lock方法  获取锁
+     3.在可能出现安全问题的代码后调用lock接口中的unlock方法  释放锁
+
 
 
 
  */
-public class Runnablepiao implements Runnable {
+public class Runnablepiao implements Runnable{
     //定义一个多个线程共享的票源
-    private static int tic = 100;
+    private int tic = 100;
+
+   // 1.在成员位置创建一个Reentrantlock对象
+    Lock l = new ReentrantLock();
+
 
     @Override
     public void run() {
-        while (true) {
-            jingtaitongbu();
-        }
-    }
+        while(true){
 
-    //静态方法代码同步
-   /*
-       静态的同步方法
-       锁对象是谁？
-       不能是this
-       因为this是创建对象之后产生的，静态方法优先于对象。
-       静态方法的锁对象是本类中的class属性——>class文件对象（反射）。
-    */
-    public static synchronized void jingtaitongbu() {
-        //先判断票是否有剩余
-        if (tic > 0) {     //静态方法只能访问静态变量
-            try {
-                //提高安全问题出现的概率，让程序睡眠一下
-                Thread.sleep(100);
-            } catch (Exception e) {
-                e.printStackTrace();
+            //调用lock方法 获取锁
+            l.lock();
+
+            //先判断票是否有剩余
+            if(tic > 0){
+                try {
+                    //提高安全问题出现的概率，让程序睡眠一下
+                    Thread.sleep(100);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                //票有剩余tic--
+                System.out.println(Thread.currentThread().getName()+"正在卖第"+tic+"票");
+                tic--;
             }
-            //票有剩余tic--
-            System.out.println(Thread.currentThread().getName() + "正在卖第" + tic + "票");
-            tic--;
+            //调用unlock方法 释放锁
+            l.unlock();
         }
 
     }
 }
-
-
-
-
-
-
-
-    /*
-    //定义一个同步方法
-    public synchronized  void tongbu(){
-        //先判断票是否有剩余
-        if(tic > 0){
-            try {
-                //提高安全问题出现的概率，让程序睡眠一下
-                Thread.sleep(100);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            //票有剩余tic--
-            System.out.println(Thread.currentThread().getName()+"正在卖第"+tic+"票");
-            tic--;
-        }
-
-
-    }
-*/
-

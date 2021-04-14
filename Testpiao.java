@@ -1,4 +1,4 @@
-package com.gaga;
+package com.wanshang;
 
 /*
     模拟买票案例
