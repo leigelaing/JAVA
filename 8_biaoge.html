@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格标签</title>
+</head>
+<body>
+<table border="1" width="50%" cellpadding="0" cellspacing="0" bgcolor="aqua" align="center">
+    <tr>
+        <!--使用th定义表头，此时字体就会加粗，并且居中-->
+        <th>编号</th>
+        <th>姓名</th>
+        <th>成绩</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>小玲</td>
+        <td>52</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>水电费</td>
+        <td>56</td>
+    </tr>
+</table>
+
+<hr>
+
+<table border="1" width="50%" cellpadding="0" cellspacing="0" bgcolor="aqua" align="center">
+    <thead>
+    <caption>学生信息表</caption>
+    <tr>
+        <!--使用th定义表头，此时字体就会加粗，并且居中-->
+        <th>编号</th>
+        <th>姓名</th>
+        <th>成绩</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+        <td>1</td>
+        <td>小玲</td>
+        <td>52</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>水电费</td>
+        <td>56</td>
+    </tr>
+    </tbody>
+    <tfoot>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>g电费</td>
+        <td>30</td>
+    </tr>
+    </tfoot>
+</table>
+
+<hr>
+<table border="1" width="50%" cellpadding="0" cellspacing="0" bgcolor="aqua" align="center">
+    <tr>
+        <!--使用th定义表头，此时字体就会加粗，并且居中-->
+        <th rowspan="2">编号</th>
+        <th>姓名</th>
+        <th>成绩</th>
+    </tr>
+    <tr>
+
+        <td>小玲</td>
+        <td>52</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td colspan="2">水电费</td>
+
+    </tr>
+</table>
+</body>
+</html>
