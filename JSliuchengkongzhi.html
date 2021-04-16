@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>流程控制语句</title>
+</head>
+<body>
+<script>
+    var a = 1;
+    switch (a){
+        case 1:
+            alert("number");
+            break;
+        case "abc":
+            alert("string");
+             break;
+        case true:
+            alert("true");
+            break;
+        case null:
+            alert("null");
+            break;
+        case undefined:
+            alert("undefined");
+            break;
+    }
+    //while语句
+    //求1-100的和
+    var b = 1;
+    var sum = 0;
+    while(b <= 100){
+         sum+= b;
+         b++;
+    }
+    alert(sum);
+    //for循环
+    var sum1 = 0;
+    for (var i = 0; i <= 100; i++) {
+        sum1 += i;
+    }
+    alert(sum1);
+</script>
+</body>
+</html>

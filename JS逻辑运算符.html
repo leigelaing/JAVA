@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>逻辑运算符</title>
+</head>
+<body>
+<script>
+    /*
+      逻辑运算符：
+      &&：与（有短路效果）
+      ||：或（有短路效果）
+      ！：非
+          *其他类型转为boolean类型。
+          （1）number转boolean   0或NaN为false  其他为 true
+          （2）string转boolean    除了空字符串（空字符串：""）,其他都是true
+          （3）null转boolean   都是false
+          （4）对象转boolean   都是true
+    */
+    var flag = true;
+    document.write(falg+"<br/>");
+    document.write(!falg+"<br/>");
+    document.write("<hr>");
+    //number
+    var num = 3;
+    var num1 = 0;
+    var num2 = NaN;
+    document.write(!!num+"<br/>");
+    document.write(!!num1+"<br/>");
+    document.write(!!num2+"<br/>");
+    document.write("<hr>");
+    //string
+    var str1 ="abc" ;
+    var str2 = "";
+    document.write(!!str1+"<br/>");
+    document.write(!!str2+"<br/>");
+    document.write("<hr>");
+    //null & undefined
+    var obj =null;
+    var obj1;
+    document.write(!!obj+"<br/>");
+    document.write(!!obj1+"<br/>");
+    document.write("<hr>");
+    //对象
+    var date = new Date();
+    document.write(!!date+"<br/>");
+    //使用
+    var obj3 = new Date();
+    var obj4 = null;
+    if(obj3){
+        alert(111);
+    }
+    if(obj4){
+        alert(222);
+    }
+</script>
+</body>
+</html>

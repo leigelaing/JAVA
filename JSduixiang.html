@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Function对象</title>
+</head>
+<body>
+<script>
+
+    /*
+      Faction对象：函数（方法）对象。
+      1.创建
+        （1） var 方法名 = new Function(形式参数列表，方法体);
+         (2)  function 方法名（形式参数列表）{
+             //方法体
+         }
+         (3)var 方法名 = function(形式参数列表){
+             //方法体
+         }
+      2.方法
+
+      3.属性
+
+      4.特点
+           (1)方法定义时，形式参数的类型不用写,返回值类型也可以不用写
+           (2)方法是一个对象，如果定义名称相同的方法，会覆盖，不会报错。
+           (3)在JS中，方法的调用，只与方法的名称有关，和参数列表无关，传入的实际参数少或者多都行，
+           少了：没传的默认为undefined，
+           多了：多了的那个实际参数被内置对象接收了。
+           (4)在方法的声明中有一个隐藏的内置对象（数组），argument(是一个数组)，封装所有的实际参数。
+      5.调用
+     */
+/*
+    //1.创建方式1
+    var fun1 = new Function("a","b","c","alert(a);");
+    //调用方法
+    //fun1(3,4);
+    alert(fun1.length);//返回方法形式参数个数。
+    //2.创建方式2
+    function  fun2(a,b){
+        alert(a+b);
+    }
+    //fun2(3,4);
+    alert(fun2.length);
+    //3.创建方式3
+    var fun3 = function(a,b){
+        alert(a+b);
+    }
+     //fun3(3,4);
+    fun2 = function(){
+
+    }
+    */
+    //求两个数的和
+    function  add(a,b){
+        return a+b;
+    }
+    var sum = add(1,2);
+    alert(sum);
+
+     //求任意个数的和
+    function add1(){
+        alert(arguments[0]);
+        alert(arguments[1]);
+    }
+    //遍历arguments数组
+    function add2(){
+        var sum = 0;
+       for(var i = 0;i<arguments.length;i++) {
+           sum += arguments[i];
+       }
+       return sum;
+    }
+   var sam = add2(1,2,3,4,5);
+     alert(sam);
+</script>
+</body>
+</html>
