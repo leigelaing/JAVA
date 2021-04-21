@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM的简单学习</title>
+
+</head>
+<body>
+<img id="light" src="img/a-1.gif">
+<h1 id = "shuai"> 雷葛亮</h1>
+<script>
+    /*
+       Dom的简单学习
+       *功能：控制html文档的内容
+       *代码：获取页面标签（元素）对象Element
+         * document.getElement("id值")：通过元素的id获取元素对象
+       *操作Element对象：
+       1.修改属性值；
+          (1)明确获取的对象是哪一个？
+          (2)查看API文档，找其中有哪些属性可以设置。
+       2.修改表标签体内容；
+           *属性：innerHTML
+     */
+    //通过id获取元素对象
+    var light = document.getElementById("light");
+    //获取h1标签对象
+  //  var shuang = document.getElementById("shuai");
+    //修改内容
+   // alert("我要换内容了！");
+    //shuang.innerHTML = "雷黑老大";
+   // alert(shuang);
+    alert(light);
+    alert("我要换图片了！");
+    light.src = "img/b.gif";
+</script>
+</body>
+</html>

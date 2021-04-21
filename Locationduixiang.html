@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Location对象</title>
+
+</head>
+<body>
+<input type = "button" id = "btn" value="刷新">
+
+<input type = "button" id = "bt" value="雷葛亮">
+<script>
+    //reload方法，定义一个按钮，点击这个按钮就去刷新页面
+   //1.获取按钮
+    var btn = document.getElementById("btn");
+    //2.绑定单击事件
+    btn.onclick = function () {
+        //3.刷新页面
+        location.reload();
+    }
+
+    //获取href属性
+    var ref = location.href;
+    alert(ref);
+
+    //点击按钮，去访问某个网站
+    //1.获取按钮
+    var bt = document.getElementById("bt");
+    //2.绑定单击事件
+    bt.onclick = function () {
+        //3.访问网站
+        location.href = "网站地址";
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定操作</title>
+</head>
+<body>
+<img id="light" src="img/a-1.gif" onclick="fun();">
+<img id="light2" src="img/a-1.gif" >
+<script>
+    function fun() {
+        alert('我被点了');
+        alert("我要杀人");
+        alert("我要报复");
+    }
+        function fun2() {
+            alert('我点了');
+            alert("我要曹丹");
+            alert("我要呵呵");
+        }
+            //1.获取light2对象
+            var light2 = document.getElementById("light2");
+            //2.绑定事件
+            light2.onclick = fun2;
+</script>
+</body>
+</html>
