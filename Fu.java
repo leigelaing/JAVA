@@ -1,23 +1,52 @@
-package com.demo5;
+package com.demo01;
 /*
-当final关键字修饰一个方法，这个方法就是最终方法。也就是不能被覆盖重写。
-格式：
-  修饰符 final 返回值类型 方法名称(参数列表){
-     //方法体
-  }
-  注意事项：
-  对于类与方法来说，abstract与final关键字不能同时使用，因为矛盾。
-  abstract关键字用来定义抽象类，抽象类的所有方法都是要被子类重写的，而final关键字修饰的类与方法
-  是不能被重写覆盖的，这样就导致相互矛盾
+    子父类的异常：
+     1.如果父类抛出多个异常，子类重写父类的方法时，
+     抛出和父类相同的异常或者是父类异常的子类或者不抛出异常
+     2.父类方法没有抛出异常，子类重写父类的方法时也不可以抛出异常。此时子类产生该异常，只能捕获处理，
+     不能声明处理
+    总结：
+      父类异常是什么样，子类异常就什么样。
  */
-/*
-public abstract class Fu {
-    public final void method(){
-        System.out.println("父类方法的执行");
+public class Fu {
+    public void  show01() throws NullPointerException,ClassCastException{
+
     }
-    //abstract 方法一定要被覆盖重写
-    //final  方法不能被覆盖重写
-    //矛盾
-    public abstract final void methodA();
+    public void  show02() throws IndexOutOfBoundsException{
+
+    }
+    public void  show03() throws IndexOutOfBoundsException{
+
+    }
+    public void  show04(){
+
+    }
+    class Zi extends Fu{
+      //子类重写父类的方法时,抛出和父类相同的异常
+      public void  show01() throws NullPointerException,ClassCastException{
+
+      }
+        //子类重写父类的方法时,父类异常的子类
+        //ArrayIndexOutOfBoundsException异常是IndexOutOfBoundsException
+        //的子异常
+        public void  show02() throws ArrayIndexOutOfBoundsException{
+
+        }
+        //子类重写父类的方法时,不抛出异常
+        public void  show03(){
+
+        }
+        //父类方法没有抛出异常，子类重写父类的方法时也不可以抛出异常。
+       // public void  show04(){
+
+       // }
+        //此时子类产生该异常，只能捕获处理，不能声明处理。
+        public void  show04(){
+            try {
+                throw new Exception("编译器异常");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }
-*/
