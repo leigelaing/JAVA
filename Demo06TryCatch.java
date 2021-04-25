@@ -1,52 +1,52 @@
 package com.demo01;
 
-import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 
 /*
-  throws 关键处理异常的缺点：一旦throws异常出现，那么异常后面的代码将不会执行。
-    try...catch：异常处理的第二种方式：自己处理异常
-     格式：
-      try{
-        可能产生异常的代码
-      }catch（定义一个异常变量，用来接收try中抛出的异常对象）{
-          异常的处理逻辑，异常对象出现之后 怎么处理异常对象
-          一般在工作中，会把异常的信息记录到一个日志中。
-      }
-      ...
-      catch（异常类名 变量名）{
-      }
-    注意事项：
-     1.try中可能会抛出多个异常对象，那么就可以使用多个catch来处理，这些异常对象。
-     2.如果try中产生了异常，那么就会执行catch中的异常处理逻辑，执行完毕catch中的处理逻辑，继续
-     执行try...catch之后的代码。
-       如果try中没有产生异常，那么就不会执行catch中的异常处理逻辑，执行完try中的代码后，继续
-     执行try...catch之后的代码。
+   在JDK1.7之前可以使用try—catch—finally 处理流中的异常，
+   格式：
+   try{
+       可能出现异常的代码
+   }catch(异常类的变量 变量名){
+       异常的处理逻辑
+   }finally{
+       一定会执行的代码
+       资源释放
+   }
  */
 public class Demo06TryCatch {
     public static void main(String[] args) {
+       //提高变量fw的作用域，让finally可以使用
+        //局部变量，在定义的时候可以没有值，但在使用的时候必须有值
+        //fw =new FileWriter("F:\\Javayunama\\leigeliang\\2021.4.24（JAVA）\\e.txt",true);
+        //上面一行代码执行失败，fw没有值，close会报错，解决办法：初始值赋值为null
+        FileWriter fw = null;
         try{
-            //可能产生异常的代码
-            readFile("d:\\a.tt");
-            //try中抛出什么异常对象，catch中就定义什么异常变量，用来接收这个异常对象。
-        } catch(IOException e){
-           // 异常的处理逻辑，异常对象出现之后 怎么处理异常对象
-            System.out.println("传递的文件后缀名不对");
-        }
-        System.out.println("后续代码");
-    }
-    /*
-     如果传递的路径，不是.txt结尾
-     那么我们就抛出IO异常对象，告知方法的调用者，文件的后缀名不对
-    */
-    public static void readFile(String fileName) throws IOException {
-        if (!fileName.equals("c:\\a.txt")) {
-            throw new FileNotFoundException("传递的文件路径不是c:\\a.txt");
-        }
+            //  可能出现异常的代码
+           fw =
+                    new FileWriter
+                            ("F:\\Javayunama\\leigeliang\\2021.4.24（JAVA）\\e.txt",true);
+            for (int i = 0; i < 10; i++) {
+                fw.write("张研萌" + i);
+                //换行
+                fw.write("\r\n");
+            }
 
-        if (!fileName.equals(".txt")) {
-            throw new IOException("文件后缀名异常");
-        }
-        System.out.println("路径没有问题，读取文件");
+        }catch(IOException e){
+            //异常的处理逻辑
+            System.out.println(e);
+        }finally{
+            //一定会执行的代码
+            //创建对象失败了，fw的默认值就是null，null是不能调用方法的，会抛出空指针异常，需要增加一个判断，不是null 在释放资源
+           if(fw == null){
+               try {
+                   //fw.close方法声明抛出了IOException异常对象，所以我们就在处理这个异常对象，要么throws要么try—catch
+                   fw.close();
+               } catch (IOException e) {
+                   e.printStackTrace();
+                 }
+              }
+           }
     }
 }
