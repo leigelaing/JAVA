@@ -1,40 +1,27 @@
-package com.bdqn;
-/**
- * Çó1000ÒÔÄÚËùÓĞµÄÍêÊı
- * 
- * Èç¹ûÒ»¸öÊı×ÖµÈÓÚÆäËùÓĞÒò×ÓÖ®ºÍ£¬ÎÒÃÇ¾Í³ÆÕâ¸öÊıÎªÍêÊı
- * 
- * 6µÄÒò×Ó£º1 2 3     6=1+2+3
+package com.demo01;
+/*
+ ç±»çš„æ„é€ å™¨ï¼ˆæ„é€ æ–¹æ³•ï¼‰å¼•ç”¨ï¼Œ
  */
 public class Demo02 {
-	public static void main(String[] args) {
-		// µ÷ÓÃ·½·¨
-		for(int i = 100;i<=1000;i++){
-			if(i == sum(i)){
-				System.out.println(i + "ÊÇÍêÊı");
-			}
-		}
-	}
-	// ¶¨ÒåÒ»¸ö¼ÆËãÒò×ÓºÍµÄ·½·¨
-	// num:´«ÈëµÄÊı×Ö
-	public static int sum(int num){		// num=6
-		// ¶¨ÒåÒ»¸öÀÛ¼ÓÆ÷
-		int result = 0;
-		for(int i = 1;i<=num/2;i++){	// num/2=3     
-			if(num%i == 0){
-				// result = result + i;
-				result+=i;				// result=0+1=1  1+2=3 3+3=6
-			}
-		}
-		return result;
-	}
-	
-	
-	
-	
-	
-	
-	
-	
+    //å®šä¹‰ä¸€ä¸ªæ–¹æ³•ï¼Œå‚æ•°ä¼ é€’å§“åå’ŒPersonBuideræ¥å£ï¼Œæ–¹æ³•ä¸­é€šè¿‡å§“ååˆ›å»ºPerson001å¯¹è±¡
+    public static  void printName(String name,PersonBuider p){
+        Person001 person = p.builderperson(name);
+        System.out.println(person.getName());
+    }
 
+    public static void main(String[] args) {
+        //è°ƒç”¨printNameæ–¹æ³•ï¼Œæ–¹æ³•çš„å‚æ•°PersonBuideræ¥å£æ˜¯ä¸€ä¸ªå‡½æ•°å¼æ¥å£ï¼Œ
+        // å¯ä»¥ä¼ é€’Lambdaè¡¨è¾¾å¼
+        printName("é—¨å„¿å­",(String name )->{
+           return new Person001(name);
+        });
+        /*
+        ä½¿ç”¨æ–¹æ³•å¼•ç”¨ä¼˜åŒ–Lambdaè¡¨è¾¾å¼
+        æ„é€ æ–¹æ³•new Preson001(String name)å·²çŸ¥
+        åˆ›å»ºå¯¹è±¡newå·²çŸ¥
+        å°±å¯ä»¥ä½¿ç”¨person001å¼•ç”¨newåˆ›å»ºå¯¹è±¡
+         */
+        //ä½¿ç”¨Person001ç±»çš„å¸¦å‚æ„é€ æ–¹æ³•ï¼Œé€šè¿‡ä¼ é€’çš„å§“ååˆ›å»ºå¯¹è±¡ã€‚
+        printName("å¤åŠ›å¨œæ‰",Person001::new);
+    }
 }
