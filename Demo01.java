@@ -1,52 +1,23 @@
-package com.bdqn;
-/**
- * º¯Êı(·½·¨)£º·´¸´µ÷ÓÃ
- * 
- * Óï·¨½á¹¹£º
- * ·ÃÎÊĞŞÊÎ·û ·µ»ØÖµÀàĞÍ ·½·¨Ãû³Æ(²ÎÊıÁĞ±í){
- * 		´úÂë¿é;
- * }
- * 
- * ËµÃ÷£º
- * 1.·ÃÎÊĞŞÊÎ·û£ºpublic private protected default
- * 2.·µ»ØÖµÀàĞÍ£º
- * void£ºÃ»ÓĞ·µ»ØÖµ
- * ÓĞ·µ»ØÖµµÄÊ±ºò£¬¾ßÌåµÄ·µ»ØÖµÊı¾İÀàĞÍ int String
- * 3.·½·¨Ãû³Æ£º×Ô¼ºÆğµÄ
- * 4.²ÎÊıÁĞ±í£º¿ÉÒÔÓĞ£¬Ò²¿ÉÒÔÃ»ÓĞ
- * 
- * 
- */
-public class Demo01 {
-	public static void main(String[] args) {
-		// µ÷ÓÃ·½·¨
-		show();
-		System.out.println(a());
-		System.out.println(add(2, 3));
-	}
-	
-	// ¶¨ÒåÒ»¸ö·½·¨£ºÊä³ö1000±éºÃºÃÑ§Ï°£¬ÌìÌìÏòÉÏ
-	public static void show(){
-		for(int i = 1;i<=1000;i++){
-			System.out.println(i + "ºÃºÃÑ§Ï°£¬³¬Ô½À×¸ğÁÁ£¡");
-		}
-	}
-	
-	// ÓĞ·µ»ØÖµµÄ·½·¨
-	public static String a(){
-		return "ÄãºÃ";
-	}
-	
-	// ÓĞ²ÎÊıµÄ·½·¨
-	public static int add(int a,int b){
-		return a+b;
-	}
-	
-	
-	
-	
-	
-	
-	
+package com.test01;
 
+import com.test02.Person1;
+
+public class Demo01 {
+    public static void main(String[] args) {
+        Person1[] arr = new Person1[3];
+
+        Person1 one = new Person1("è¿ªä¸½çƒ­å·´",15);
+        Person1 two = new Person1("é—«å¦®",55);
+        Person1 three = new Person1("é›·è‘›äº®",18);
+
+        //å°†oneå½“ä¸­çš„åœ°å€èµ‹å€¼ç»™arr[0]
+        arr[0] = one;//åœ°å€
+        arr[1] = two;//åœ°å€
+        arr[2] = three;//åœ°å€
+
+        Person1 per = arr[0];
+        System.out.println(per.getName());
+        System.out.println(per.getAge());
+
+    }
 }

@@ -1,19 +1,35 @@
-package com.legelaing;
-/*
-public  final class User {
-    private String name;
-    int age;
-    //´ø³õÊ¼ÖµµÄ³ÉÔ±±äÁ¿
-    double salary = 3500;
-    public boolean isMarried;
-    String   day;
-    int id;
-    //¶¨ÒåÒ»¸öint[]ÀàĞÍ£¬±äÁ¿Ãû   quanxian
-    int[] quanxian;
-    
-    
-    //int age  = 20;//³ÉÔ±±äÁ¿
-    ///double de;//³ÉÔ±±äÁ¿
-      de = 4.3;//¸³Öµ
+package com.test03;
+
+public class User<show> {
+    private String name;//å§“å
+    private int money;//ä½™é¢
+
+    public User(String name, int money) {
+        this.name = name;
+        this.money = money;
+    }
+
+    public User() {
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getMoney() {
+        return money;
+    }
+
+    public void setMoney(int money) {
+        this.money = money;
+    }
+    //å±•ç¤ºä¸€ä¸‹å½“å‰ç”¨æˆ·æœ‰å¤šå°‘ä½™é¢
+    public void show(){
+        System.out.println("æˆ‘å«"+name+"æˆ‘æœ‰å¤šå°‘é’±"+money);
+    }
+
 }
-*/
