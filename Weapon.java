@@ -1,7 +1,7 @@
-package com.demo1;
+package com.demo01;
 
 public class Weapon {
-    private String code;//武器代号
+    private String code;
 
     public Weapon() {
     }

@@ -1,20 +1,17 @@
-package com.demo2;
+package com.demo01;
 
 public class Hero {
-    private String name;//姓名
-    private  Skill skill;//技能
+    private String name;
+    private int age;
+    private Weapon weapon;
 
-    public void attack(){
-        System.out.println("我叫 "+name);
-        skill.use();//调用接口中的抽象方法。
-        System.out.println("释放技能完成");
-    }
     public Hero() {
     }
 
-    public Hero(String name, Skill skill) {
+    public Hero(String name, int age, Weapon weapon) {
         this.name = name;
-        this.skill = skill;
+        this.age = age;
+        this.weapon = weapon;
     }
 
     public String getName() {
@@ -25,11 +22,23 @@ public class Hero {
         this.name = name;
     }
 
-    public Skill getSkill() {
-        return skill;
+    public int getAge() {
+        return age;
     }
 
-    public void setSkill(Skill skill) {
-        this.skill = skill;
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public Weapon getWeapon() {
+        return weapon;
+    }
+
+    public void setWeapon(Weapon weapon) {
+        this.weapon = weapon;
+    }
+    public void attack(){
+        System.out.println
+                ("年龄为"+age+" 姓名为："+name+" 武器是："+weapon.getCode()+" 正在攻击敌方");
     }
 }
