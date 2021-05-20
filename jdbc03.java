@@ -10,7 +10,7 @@ import java.sql.Statement;
    2.account表，修改记录
    3.account表，删除记录
  */
-public class jdbc01 {
+public class jdbc03 {
     public static void main(String[] args) {
         Statement stmt = null;
         Connection con = null;
@@ -20,7 +20,7 @@ public class jdbc01 {
             //2.获取数据库连接对象（Connection）
             con = DriverManager.getConnection("jdbc:mysql:///leigeliang", "root", "root");
             //3.定义SQL
-            String sql = "insert into account values(null,'雷葛亮',3000)";
+            String sql = "delete from account where id = 3";
             //4.获取执行SQL语句的对象Statement
             stmt = con.createStatement();
             //5.执行SQL，接收返回结果

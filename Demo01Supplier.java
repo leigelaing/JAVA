@@ -1,32 +1,32 @@
-package com.demo02;
+package Demo01;
 
 import java.util.function.Supplier;
 
 /*
-  常用的函数式接口，
-  java.util.function.Supplier<T>接口仅包含一个无参的方法：T get()。
-  用来获取一个泛型参数指定类型的对象数据。
-  Supplier<T>接口被称之为生产型接口，指定接口中的泛型是什么类型，
-  那么接口中的get方法就会生产什么类型的数据。
+  求数组的最大最大值
+  使用Supplier接口作为参数的类型，通过Lambda表达式求出int数组的最大值。
  */
 public class Demo01Supplier {
-    //定义一个方法，方法的参数传递Supplier<T>接口，泛型执行String.get()
-    public static String getString(Supplier<String> sup ){
+    //定义一个方法，用于获取数组中元素的最大值，方法的参数传递Supplier接口，泛型使用Interge
+    public static int getMax(Supplier<Integer> sup){
         return sup.get();
     }
-
     public static void main(String[] args) {
-        //调用getString方法，方法的参数Supplier是一个函数式接口，所以可以传递Lambda表达式。
-        String s = getString(()->{
-            //生产一个字符串并返回。
-            return "雷葛亮";
+     //定义一个int类型的数组
+     int[] arr = {100,52,51,63,56};
+     //调用getMax方法，方法的参数Supplier<Integer>接口，可以传递Lambda表达式
+        int maxx = getMax(()->{
+            //获取数组的最大值并返回
+            //定义一个变量，把数组中的第一个元素赋值给变量，记录数组中元素的最大值。
+            int max = arr[0];
+            for(int i : arr){
+                //如果i大于Max替换Max
+                if(i > max) {
+                    max = i;
+                }
+            }
+            return max;
         });
-        //优化lambda表达式
-        String s1 = getString(()->
-            //生产一个字符串并返回。
-            "雷葛亮"
-        );
-        System.out.println(s);
-        System.out.println(s1);
+        System.out.println("最大值"+maxx);
     }
 }

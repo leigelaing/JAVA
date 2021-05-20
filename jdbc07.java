@@ -1,8 +1,5 @@
 package Demo01;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 /*
    练习：
@@ -10,51 +7,61 @@ import java.sql.Statement;
    2.account表，修改记录
    3.account表，删除记录
  */
-public class jdbc01 {
+public class jdbc07 {
     public static void main(String[] args) {
         Statement stmt = null;
         Connection con = null;
+        ResultSet count = null;
         //1.注册驱动
         try {
             Class.forName("com.mysql.jdbc.Driver");
             //2.获取数据库连接对象（Connection）
             con = DriverManager.getConnection("jdbc:mysql:///leigeliang", "root", "root");
             //3.定义SQL
-            String sql = "insert into account values(null,'雷葛亮',3000)";
+            String sql = "select * from account ";
             //4.获取执行SQL语句的对象Statement
             stmt = con.createStatement();
             //5.执行SQL，接收返回结果
-            int count = stmt.executeUpdate(sql);//影响的行数
+            count = stmt.executeQuery(sql);//影响的行数
             //6.处理结果
-            System.out.println(count);
-            if (count > 0) {
-                System.out.println("成功");
-            } else {
-                System.out.println("添加失败");
+            //6.1让游表向下移动一行
+            while(count.next()){
+                //循环判断结果集是否有数据
+                //6.2获取数据
+                int id = count.getInt(1);
+                String name = count.getString("name");
+                double balance = count.getDouble(3);
+                System.out.println(id + "---" + name + "---" + balance);
             }
-
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         } finally {
             //7.释放资源
             //为了避免空指针异常，空指针不能调用函数。
-            if (stmt != null) {
+            if (count != null) {
                 try {
-                    stmt.close();
+                    count.close();
                 } catch (SQLException throwables) {
                     throwables.printStackTrace();
                 }
-                if (con != null) {
+                if (stmt != null) {
                     try {
-                        con.close();
+                        stmt.close();
                     } catch (SQLException throwables) {
                         throwables.printStackTrace();
+                    }
+                    if (con != null) {
+                        try {
+                            con.close();
+                        } catch (SQLException throwables) {
+                            throwables.printStackTrace();
+                        }
+
                     }
 
                 }
 
             }
-
         }
     }
 }
