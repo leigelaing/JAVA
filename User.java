@@ -1,35 +1,52 @@
-package com.test03;
+package CookieDemo523;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-public class User<show> {
-    private String name;//姓名
-    private int money;//余额
-
-    public User(String name, int money) {
-        this.name = name;
-        this.money = money;
-    }
+public class User {
+    private String name;
+    private int age;
+    private Date birthday;
 
     public User() {
     }
 
+    public User(String name, int age, Date birthday) {
+        this.name = name;
+        this.age = age;
+        this.birthday = birthday;
+    }
+    /*
+      逻辑视图
+     */
+    public String getBitStr(){
+        if(birthday != null){
+            //1.格式化日期对象
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            //2.返回字符串即可
+            return sdf.format(birthday);
+        }
+        else {
+            return "";
+        }
+    }
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
-
-    public int getMoney() {
-        return money;
+    public int getAge() {
+        return age;
+    }
+    public void setAge(int age) {
+        this.age = age;
     }
 
-    public void setMoney(int money) {
-        this.money = money;
-    }
-    //展示一下当前用户有多少余额
-    public void show(){
-        System.out.println("我叫"+name+"我有多少钱"+money);
+    public Date getBirthday() {
+        return birthday;
     }
 
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
 }
