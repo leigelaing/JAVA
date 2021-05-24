@@ -1,27 +1,32 @@
-package Demo02;
+package Person;
 
-import java.io.Serializable;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
-/*
- 序列化与反序列化的时候，会抛出NotSerializableException异常（没有序列化异常）
- 类通过实现java.io.Serializable 接口以启用其序列化功能，未实现此接口的类将无法使其
- 任何状态序列化或反序列化。
- Serializable接口也叫标记型接口
-   要进行序列化与反序列化的类必须实现Serializable接口，就会给类添加一个标记。
-   当我们进行序列化和反序列化的时候，就会检测类上是否有这个标记。
-   有：就可以序列化与反序列化
-   没有：就会抛出NotSerializableException异常。
- */
-public class Person implements Serializable {
-    private String name ;
+import java.util.Date;
+
+public class Person {
+    private String name;
     private int age;
+    private String gender;
+    @JsonFormat(pattern = "yyyy-MM-dd")
+   private Date birthday;
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
 
     public Person() {
     }
 
-    public Person(String name, int age) {
+    public Person(String name, int age, String gender) {
         this.name = name;
         this.age = age;
+        this.gender = gender;
     }
 
     public String getName() {
@@ -40,11 +45,20 @@ public class Person implements Serializable {
         this.age = age;
     }
 
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
+                ", gender='" + gender + '\'' +
                 '}';
     }
 }

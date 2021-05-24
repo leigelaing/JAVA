@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03-Json数据格式.html</title>
+    <script>
+        //1.定义基本格式：
+        var person = {"name":"张三","age":23,"gender":true};
+     //   alert(person);
+        //获取name的值
+        var name = person.name;
+        alert(name);
+        //嵌套格式：  {}——>[]
+        var persons = {
+            "persons":[
+                {"name":"张三","age":23,"gender":true},
+                {"name":"李四","age":20,"gender":true},
+                {"name":"王五","age":13,"gender":false}
+            ]};
+       // alert(persons);
+        //获取王五值
+        var name1 = persons.persons[2].age;
+        alert(name1);
+        //嵌套格式：  []——>{}
+        var ps = [
+            {"name":"张三","age":23,"gender":true},
+            {"name":"李四","age":20,"gender":true},
+            {"name":"王五","age":13,"gender":false}
+        ];
+      //  alert(ps);
+        var name2 = ps[1].name;
+        alert(name2);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
