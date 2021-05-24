@@ -1,32 +1,21 @@
-package cn.itcast.web.servlet;
+package Servletdemo;
+
 import javax.servlet.*;
-import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.*;
+import javax.servlet.annotation.*;
 import java.io.IOException;
-@WebServlet("/demo01")
-public class ServletDemo01  implements Servlet {
 
+@WebServlet("/ServletDemo01")
+public class ServletDemo01 extends HttpServlet {
     @Override
-    public void init(ServletConfig servletConfig) throws ServletException {
-
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        this.doPost(request, response);
     }
 
     @Override
-    public ServletConfig getServletConfig() {
-        return null;
-    }
-
-    @Override
-    public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException {
-        System.out.println("雷嘉是我儿子");
-    }
-
-    @Override
-    public String getServletInfo() {
-        return null;
-    }
-
-    @Override
-    public void destroy() {
-
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("updateServlet.....");
+        //转发到index.jsp
+        request.getRequestDispatcher("index.jsp").forward(request,response);
     }
 }
