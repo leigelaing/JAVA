@@ -1,45 +1,39 @@
-package CookieDemo523;
-import java.text.SimpleDateFormat;
+package Demo03;
+
 import java.util.Date;
 
+/*
+ 用户的javaBean，（用户的实体类）
+
+ */
 public class User {
-    private String name;
-    private int age;
-    private Date birthday;
+ private int id;
+ private String username;
+ private Date birthday;
 
     public User() {
     }
 
-    public User(String name, int age, Date birthday) {
-        this.name = name;
-        this.age = age;
+    public User(int id, String username, Date birthday) {
+        this.id = id;
+        this.username = username;
         this.birthday = birthday;
     }
-    /*
-      逻辑视图
-     */
-    public String getBitStr(){
-        if(birthday != null){
-            //1.格式化日期对象
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            //2.返回字符串即可
-            return sdf.format(birthday);
-        }
-        else {
-            return "";
-        }
+
+    public int getId() {
+        return id;
     }
-    public String getName() {
-        return name;
+
+    public void setId(int id) {
+        this.id = id;
     }
-    public void setName(String name) {
-        this.name = name;
+
+    public String getUsername() {
+        return username;
     }
-    public int getAge() {
-        return age;
-    }
-    public void setAge(int age) {
-        this.age = age;
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public Date getBirthday() {
@@ -48,5 +42,14 @@ public class User {
 
     public void setBirthday(Date birthday) {
         this.birthday = birthday;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", birthday=" + birthday +
+                '}';
     }
 }
